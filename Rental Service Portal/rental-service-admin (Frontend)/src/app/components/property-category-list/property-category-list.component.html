@@ -1,0 +1,29 @@
+<div class="m-5 col-6">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <table class="table table-borded table-striped">
+    <thead>
+      <tr>
+        <th>OPTIONS</th>
+        <th>ID</th>
+        <th>CATEGORY NAME</th>
+      </tr>
+    </thead>
+  <tbody>
+    <tr *ngFor="let propertyCategory of propertyCategories">
+      <td>
+        <button class="btn btn-danger" (click)="removeCategory(propertyCategory.id)"><span class="material-symbols-outlined">
+          delete
+          </span></button>
+        <button class="btn btn-success" (click)="showPropertyCategoryEdit(propertyCategory.id)"><span class="material-symbols-outlined">
+          edit_square
+          </span></button>
+      </td>
+      <td>{{propertyCategory.id}}</td>
+      <td>{{propertyCategory.categoryName}}</td>
+    </tr>
+    <tr *ngIf="!propertyCategories || propertyCategories. length ==0">
+      <td colspan="3">No data available</td>
+    </tr>
+  </tbody>
+</table>
+</div>

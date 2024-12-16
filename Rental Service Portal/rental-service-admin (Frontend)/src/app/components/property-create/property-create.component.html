@@ -1,0 +1,92 @@
+<div class="container m-5">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <form [formGroup]="propertyFormGroup" (ngSubmit)="onSubmit()">
+        <div formGroupName="property">
+          <h2>Add New Property Details</h2>
+          <hr />
+          <!-- category control -->
+           <div class="my-3">
+            <label class="form-lable">Category: </label>
+            <select formControlName="category" class="form-control">
+              <option *ngFor="let propertyCategory of propertyCategories" [ngValue]="propertyCategory">
+                {{propertyCategory.categoryName}}
+              </option>
+            </select>
+            <div *ngIf="category?.invalid && (category?.touched || category?.dirty)" class="alert alert-danger">
+              <div *ngIf="category?.errors?.['required']">
+                Category is required
+              </div>
+            </div>
+           </div>
+           <!-- category control ended -->
+
+           <!-- Available control -->
+           <div class="my-3">
+            <label class="form-label">Available: </label>
+            <input type="text" class="form-control" formControlName="available"/>
+            <div *ngIf="available?.invalid && (available?.touched || available?.dirty)" class="alert alert-danger">
+              <div *ngIf="available?.errors?.['required']">Available is required</div>
+            </div>
+           </div>
+           <!-- Available control ended-->
+
+            <!-- Security Deposit control -->
+           <div class="my-3">
+            <label class="form-label">Security Deposit: </label>
+            <input type="number" class="form-control" formControlName="securityDeposit"/>
+            <div *ngIf="securityDeposit?.invalid && (securityDeposit?.touched || securityDeposit?.dirty)" class="alert alert-danger">
+              <div *ngIf="securityDeposit?.errors?.['required']">Security Deposit is required</div>
+            </div>
+           </div>
+           <!-- Security Deposit control ended-->
+
+            <!-- price control -->
+           <div class="my-3">
+            <label class="form-label">Price: </label>
+            <input type="number" class="form-control" formControlName="price"/>
+            <div *ngIf="price?.invalid && (price?.touched || price?.dirty)" class="alert alert-danger">
+              <div *ngIf="price?.errors?.['required']">Price is required</div>
+            </div>
+           </div>
+           <!-- price control ended-->
+
+            <!-- areaOfProperty control -->
+           <div class="my-3">
+            <label class="form-label">Area Of Property: </label>
+            <input type="text" class="form-control" formControlName="areaOfProperty"/>
+            <div *ngIf="areaOfProperty?.invalid && (areaOfProperty?.touched || areaOfProperty?.dirty)" class="alert alert-danger">
+              <div *ngIf="areaOfProperty?.errors?.['required']">Area Of Property is required</div>
+            </div>
+           </div>
+           <!-- areaOfProperty control ended-->
+
+            <!-- ImagesUrl control -->
+           <div class="my-3">
+            <label class="form-label">imagesUrl: </label>
+            <input type="text" class="form-control" formControlName="imagesUrl"/>
+            <div *ngIf="imagesUrl?.invalid && (imagesUrl?.touched || imagesUrl?.dirty)" class="alert alert-danger">
+              <div *ngIf="imagesUrl?.errors?.['required']">Images Url is required</div>
+            </div>
+           </div>
+           <!-- ImagesUrl control ended-->
+
+            <!-- Address control -->
+           <div class="my-3">
+            <label class="form-label">Address: </label>
+            <input type="text" class="form-control" formControlName="address"/>
+            <div *ngIf="address?.invalid && (address?.touched || address?.dirty)" class="alert alert-danger">
+              <div *ngIf="address?.errors?.['required']">Address is required</div>
+            </div>
+           </div>
+           <!-- Address control ended-->
+        </div>
+
+        <!-- submit button -->
+        <div class="d-grid">
+          <input type="submit" value="Add New Property" class="btn btn-primary" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<p>property-list works!</p>
+
+<div class = "table-responsive" m-5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>AVAILABLE</th>
+        <th>SECURITY DEPOSIT</th>
+        <th>PRICE</th>
+        <th>AREA OF PROPERTY</th>
+        <th>IMAGES URL</th>
+        <th>ADDRESS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let property of properties">
+        <td>{{property.id}}</td>
+        <td>{{property.available}}</td>
+        <td>{{property.securityDeposit}}</td>
+        <td>{{property.price}}</td>
+        <td>{{property.areaOfProperty}}</td>
+        <td>{{property.imagesUrl}}</td>
+        <td>{{property.address}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
